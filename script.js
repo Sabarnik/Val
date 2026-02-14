@@ -51,23 +51,9 @@ function updateStars() {
 const button = document.getElementById("valentinesButton");
 
 button.addEventListener("click", () => {
-  if (button.textContent === "Click Me! ❤") {
-    button.textContent = "loading...";
-    fetch('send_mail.php')
-      .then(response => {
-        if (response.ok) {
-          button.textContent = "Check Your Email 🙃";
-        } else {
-          console.error('Failed to send email');
-          button.textContent = "Error 😞";
-        }
-      })
-      .catch(error => {
-        // Handle network errors or other issues
-        console.error('Error:', error);
-        button.textContent = "Error 😞";
-      });
-  }
+    if (button.textContent === "Click Me! ❤") {
+        button.textContent = "I love you, Shuvankhi! ❤ Happy Valentine's Day!";
+    }
 });
 
 function drawTextWithLineBreaks(lines, x, y, fontSize, lineHeight) {
@@ -189,9 +175,9 @@ function drawText() {
         context.fillStyle = `rgba(45, 45, 255, ${opacity})`;
 
         if (window.innerWidth < 600) {
-            drawTextWithLineBreaks(["I love you so much {name}, more than", "all the time and space in the universe can contain"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
+            drawTextWithLineBreaks(["I love you so much Shuvankhi, more than", "all the time and space in the universe can contain"], canvas.width / 2, canvas.height / 2, fontSize, lineHeight);
         } else {
-            context.fillText("I love you so much {name}, more than all the time and space in the universe can contain", canvas.width/2, canvas.height/2);
+            context.fillText("I love you so much Shuvankhi, more than all the time and space in the universe can contain", canvas.width/2, canvas.height/2);
         }
 
         opacity = opacity + 0.01;
@@ -199,7 +185,6 @@ function drawText() {
     
     if(frameNumber >= 2750 && frameNumber < 99999){
         context.fillStyle = `rgba(45, 45, 255, ${secondOpacity})`;
-
 
         if (window.innerWidth < 600) {
             drawTextWithLineBreaks(["and I can't wait to spend all the time in", "the world to share that love with you!"], canvas.width / 2, (canvas.height/2 + 60), fontSize, lineHeight);
